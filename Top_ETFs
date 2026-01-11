@@ -1,0 +1,13 @@
+# Top performing non-leveraged ETFs by week and month
+
+SELECT 
+    t1.Ticker,
+    t1.Name,
+    t1.W_return,
+    t2.M_return,
+    t1.AUM,
+    t1.Avg_shares_3m
+FROM ` AS t1  --weekly
+INNER JOIN ` AS t2  --monthly
+    ON t1.ticker = t2.ticker
+WHERE NOT REGEXP_CONTAINS(t1.Name, r'(?i)2x')
