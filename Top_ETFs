@@ -5,8 +5,9 @@ SELECT
     t1.Name,
     t1.W_return,
     t2.M_return,
-    t1.AUM,
-    t1.Avg_shares_3m
+    t1.Aum,
+    t1.Avg_shares_3m,
+    t1.Date_rec
 FROM ` AS t1  --weekly
 INNER JOIN ` AS t2  --monthly
     ON t1.ticker = t2.ticker
